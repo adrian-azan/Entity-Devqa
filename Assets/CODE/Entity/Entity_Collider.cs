@@ -5,9 +5,7 @@ using System.Linq;
 public class Entity_Collider : MonoBehaviour
 {   
     public List<Collider> _Colliders;
-
-    
-   
+      
     public void Awake()
     {        
         _Colliders = GetComponentsInChildren<Collider>().ToList<Collider>();       
@@ -19,7 +17,7 @@ public class Entity_Collider : MonoBehaviour
             return;
         _Colliders.ForEach(x => x.enabled = false);
     }
-
+  
     public void OnEnable()
     {
         if (_Colliders == null)
@@ -29,8 +27,6 @@ public class Entity_Collider : MonoBehaviour
 
     public void IgnoreCollision(Entity_Collider collider, bool ignore = true)
     {
-
-        Debug.Log("Ignoring");
         foreach (var box in _Colliders)
         {
             foreach (var otherBox in collider._Colliders)
@@ -47,10 +43,8 @@ public class Entity_Collider : MonoBehaviour
     }
 
 
-    public void Trigger(bool isTrigger)
+    public void Trigger(bool newTrigger)
     {
-        _Colliders.ForEach(x => x.isTrigger = isTrigger);
-    }
-
-     
+        _Colliders.ForEach(x => x.isTrigger = newTrigger);
+    }     
 }

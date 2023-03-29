@@ -5,14 +5,29 @@ using UnityEngine;
 
 public class Mob : Mechanical_Entity
 {
+    public enum MobState
+    {
+        IDLE,
+        FOCUSED,
+        FIGHTING
+    };
 
+    public MobState _State; 
     public float _Health;
     public float _Defense;
     public float _Speed;
     public float _Strength;
 
     protected float _Experience;
-   
+
+    public new void Awake()
+    {
+        base.Awake();
+
+        _State = MobState.IDLE; 
+
+    }
+
     // Update is called once per frame
     void Update()
     {

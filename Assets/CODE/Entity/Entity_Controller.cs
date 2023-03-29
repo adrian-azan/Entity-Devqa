@@ -26,11 +26,9 @@ public class Entity_Controller : MonoBehaviour
     protected void FixedUpdate()
     {
       _RB.AddForce(Vector3.down*Time.fixedDeltaTime,ForceMode.Acceleration);
-        _RB.maxAngularVelocity = 0;
+      _RB.maxAngularVelocity = 0;
 
-            Debug.DrawRay(transform.position, _RB.velocity);
-
-
+      Debug.DrawRay(transform.position, _RB.velocity);
     }
 
     public void AddVelocity(Vector3 velocity)

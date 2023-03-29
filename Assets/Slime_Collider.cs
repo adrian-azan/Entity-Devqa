@@ -12,10 +12,8 @@ public class Slime_Collider : Entity_Collider
         if (otherRoot == null)
             return;
         
-        Debug.Log("COLLIDER");
-
-        int otherMove = Random.Range(0,20);
-        int move = Random.Range(0,20);
+        int otherMove = Random.Range(0,(int)(20*otherRoot._Strength));
+        int move = Random.Range(0,(int)(20* GetComponentInParent<Slime>()._Strength));
 
         if (move < otherMove)
         {

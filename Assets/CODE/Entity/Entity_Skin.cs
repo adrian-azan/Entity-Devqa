@@ -45,8 +45,4 @@ public class Entity_Skin : Attribute
 
         return _Render.First().material.color;
     }
-        private void OnApplicationPause(bool pause)
-    {
-        
-    }
 }
